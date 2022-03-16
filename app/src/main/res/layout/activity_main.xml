@@ -50,7 +50,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/button_usterka"
         android:layout_width="176dp"
         android:layout_height="175dp"
         android:paddingLeft="20dip"
@@ -87,7 +87,7 @@
         android:layout_height="175dp"
         android:text="Mapy"
         app:cornerRadius="30dp"
-        app:icon="@drawable/icons8_Location_64px_1"
+        app:icon="@drawable/icons8_location_64px_1"
         app:iconGravity="textTop"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
