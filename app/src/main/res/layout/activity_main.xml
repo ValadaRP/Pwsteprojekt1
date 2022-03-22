@@ -35,12 +35,12 @@
         app:layout_constraintGuide_begin="401dp" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/button_ustawienia"
         android:layout_width="176dp"
         android:layout_height="175dp"
         android:paddingLeft="20dip"
         android:paddingRight="20dip"
-        android:text="Ustawienia"
+        android:text="@string/but_ustawienia"
         app:cornerRadius="30dp"
         app:icon="@drawable/icons8_settings_64px"
         app:iconGravity="textTop"
@@ -55,24 +55,24 @@
         android:layout_height="175dp"
         android:paddingLeft="20dip"
         android:paddingRight="20dip"
-        android:text="Usterka"
+        android:text="@string/but_usterka"
         app:cornerRadius="30dp"
         app:icon="@drawable/icons8_wrench_64px"
         app:iconGravity="textTop"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/button_wiadomosci"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_wiadomosci"
         android:layout_width="176dp"
         android:layout_height="175dp"
         android:paddingLeft="20dip"
         android:paddingRight="20dip"
-        android:text="Wiadomości"
+        android:text="@string/but_wiadomosci"
         app:cornerRadius="30dp"
         app:icon="@drawable/icons8_secured_letter_64px"
         app:iconGravity="textTop"
@@ -82,10 +82,10 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button_mapy"
         android:layout_width="176dp"
         android:layout_height="175dp"
-        android:text="Mapy"
+        android:text="@string/but_mapy"
         app:cornerRadius="30dp"
         app:icon="@drawable/icons8_location_64px_1"
         app:iconGravity="textTop"
@@ -95,10 +95,10 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button_dokumenty"
         android:layout_width="176dp"
         android:layout_height="175dp"
-        android:text="Dokumenty"
+        android:text="@string/but_dokumenty"
         app:cornerRadius="30dp"
         app:icon="@drawable/icons8_google_forms_64px_1"
         app:iconGravity="textTop"
@@ -108,10 +108,10 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button_zlecenia"
         android:layout_width="176dp"
         android:layout_height="175dp"
-        android:text="Zlecenia"
+        android:text="@string/but_zlecenia"
         app:cornerRadius="30dp"
         app:icon="@drawable/icons8_truck_64px"
         app:iconGravity="textTop"

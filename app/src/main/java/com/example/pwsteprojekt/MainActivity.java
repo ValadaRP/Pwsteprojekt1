@@ -7,19 +7,63 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity {
 
-    private Button button_usterka;
+    private Button button_usterka,button_wiadomosci,button_zlecenia,button_mapy,button_dokumenty,button_ustawienia;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         button_usterka = findViewById(R.id.button_usterka);
+        button_wiadomosci = findViewById(R.id.button_wiadomosci);
+        button_zlecenia = findViewById(R.id.button_zlecenia);
+        button_mapy = findViewById(R.id.button_mapy);
+        button_dokumenty = findViewById(R.id.button_dokumenty);
+        button_ustawienia = findViewById(R.id.button_ustawienia);
+
+
 
         button_usterka.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,Usterka.class);
+                startActivity(intent);
+            }
+        });
+        button_wiadomosci.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Wiadomosci.class);
+                startActivity(intent);
+            }
+        });
+        button_zlecenia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Zlecenia.class);
+                startActivity(intent);
+            }
+        });
+        button_mapy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Mapy.class);
+                startActivity(intent);
+            }
+        });
+        button_dokumenty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Dokumenty.class);
+                startActivity(intent);
+            }
+        });
+        button_ustawienia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Ustawienia.class);
                 startActivity(intent);
             }
         });

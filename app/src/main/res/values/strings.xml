@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">PwsteProjekt</string>
+    <string name="app_name">cAPP</string>
+    <string name="text_usterka">Opisz swój problem</string>
+    <string name="but_wiadomosci">wiadomości</string>
+    <string name="but_usterka">usterka</string>
+    <string name="but_zlecenia">zlecenia</string>
+    <string name="but_mapy">mapy</string>
+    <string name="but_dokumenty">dokumenty</string>
+    <string name="but_ustawienia">ustawienia</string>
+
 </resources>
