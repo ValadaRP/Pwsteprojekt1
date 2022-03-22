@@ -8,4 +8,7 @@
     <string name="but_dokumenty">dokumenty</string>
     <string name="but_ustawienia">ustawienia</string>
 
+    <string name="but_zrob_zdjecie">Zrób zdjęcie</string>
+    <string name="but_wyslij">Wyślij</string>
+
 </resources>
