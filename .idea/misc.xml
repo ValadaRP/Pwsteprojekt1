@@ -4,8 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Git/Pwsteprojekt1/app/src/main/res/layout/activity_main.xml" value="0.5541666666666667" />
-        <entry key="..\:/Git/Pwsteprojekt1/app/src/main/res/layout/activity_usterka.xml" value="0.5541666666666667" />
-        <entry key="..\:/Git/Pwsteprojekt1/app/src/main/res/layout/activity_zlecenia.xml" value="0.5541666666666667" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.24731903076171877" />
+        <entry key="app/src/main/res/layout/activity_mapy.xml" value="0.20742753623188406" />
+        <entry key="app/src/main/res/layout/activity_ustawienia.xml" value="0.20742753623188406" />
       </map>
     </option>
   </component>
