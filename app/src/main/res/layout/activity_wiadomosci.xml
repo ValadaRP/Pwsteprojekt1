@@ -6,4 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".Wiadomosci">
 
+    <EditText
+        android:id="@+id/editTextMessage"
+        android:layout_width="379dp"
+        android:layout_height="280dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:autofillHints="" />
+
+    <Button
+        android:id="@+id/wyslijButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:text="@string/but_wiadomosc_wyslij"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMessage" />
 </androidx.constraintlayout.widget.ConstraintLayout>

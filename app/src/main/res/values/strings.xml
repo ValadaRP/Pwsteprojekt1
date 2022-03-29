@@ -10,5 +10,6 @@
 
     <string name="but_zrob_zdjecie">Zrób zdjęcie</string>
     <string name="but_wyslij">Wyślij</string>
+    <string name="but_wiadomosc_wyslij">Wyślij</string>
 
 </resources>
