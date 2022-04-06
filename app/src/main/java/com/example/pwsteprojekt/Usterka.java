@@ -12,7 +12,7 @@ import android.widget.EditText;
 
 public class Usterka extends AppCompatActivity {
     private Button zrob_zdjecie;
-    public EditText editTextMultiLine = findViewById(R.id.editTextMultiLine);
+    private EditText editTextMultiLine;
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
@@ -22,7 +22,7 @@ public class Usterka extends AppCompatActivity {
         setContentView(R.layout.activity_usterka);
 
         zrob_zdjecie = findViewById(R.id.zrob_zdjecie);
-
+        editTextMultiLine = findViewById(R.id.editTextMultiLine);
 
         zrob_zdjecie.setOnClickListener(new View.OnClickListener() {
             @Override
