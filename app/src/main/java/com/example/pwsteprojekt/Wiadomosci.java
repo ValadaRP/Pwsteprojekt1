@@ -2,6 +2,7 @@ package com.example.pwsteprojekt;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -21,10 +22,9 @@ public class Wiadomosci extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wiadomosci);
-
-        list = (ListView) findViewById(R.id.list);
+        list =  findViewById(R.id.list);
         infoW = findViewById(R.id.infoW);
-        String[] mobileArray = {"Android","IPhone","WindowsMobile","Blackberry","WebOS","Ubuntu","Windows7","Max OS X"};
+        String[] mobileArray = {"Android","IPhone","JEDZIE POCIAG Z DALEKA NA NIKOGO NIE CZEKA","WindowsMobile","Blackberry","WebOS","Ubuntu","Windows7","Max OS X"};
         String[] wiadomosci = {};
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,mobileArray);
         list.setAdapter(adapter);
@@ -33,6 +33,13 @@ public class Wiadomosci extends AppCompatActivity {
     }
     public void onItemClick(AdapterView<?> parent, View view, int position, long id){
         String wiadomosc = list.getItemAtPosition(position).toString();
+        Intent intent = new Intent(Wiadomosci.this,WiadomosciWyslij.class);
+        intent.putExtra("wiadomosc", wiadomosc);
+        startActivity(intent);
         infoW.setText(wiadomosc);
+    }
+
+    public ListView getList() {
+        return list;
     }
 }
