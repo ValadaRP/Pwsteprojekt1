@@ -31,15 +31,16 @@ public class WiadomosciWyslij extends AppCompatActivity {
 
         if(bundle!=null)
         {
+            String id = (String) bundle.get("idwiadomosc");
             String j =(String) bundle.get("wiadomosc");
-            wyswietlanyTekst.setText(j);
+            wyswietlanyTekst.setText("ID wiadomosci: " + id + " " +  j);
         }
         wyslijButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String odpowiedz = editTextTresc.getText().toString();
                 if(!odpowiedz.isEmpty()){
-                    // wyslij wiadomosc
+                    // wyslij wiadomosc od id pobranym wczesniej
                 }else{
                     Toast.makeText(WiadomosciWyslij.this, "Nie mozesz wyslac pustej wiadomosci", Toast.LENGTH_SHORT).show();
                 }

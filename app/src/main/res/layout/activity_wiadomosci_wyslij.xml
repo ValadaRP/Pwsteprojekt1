@@ -33,14 +33,13 @@
 
     <EditText
         android:id="@+id/editTextTresc"
-        android:layout_width="368dp"
-        android:layout_height="389dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="369dp"
+        android:layout_height="219dp"
+        android:layout_marginTop="76dp"
         android:ems="10"
-        android:hint="Wpisz tresc wiadomosci"
+        android:hint="@string/edit_trescWiadomosci"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wyswietlanyTekst" />
 </androidx.constraintlayout.widget.ConstraintLayout>
