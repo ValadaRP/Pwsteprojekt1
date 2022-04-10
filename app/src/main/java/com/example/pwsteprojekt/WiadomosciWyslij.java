@@ -31,9 +31,8 @@ public class WiadomosciWyslij extends AppCompatActivity {
 
         if(bundle!=null)
         {
-            String id = (String) bundle.get("idwiadomosc");
             String j =(String) bundle.get("wiadomosc");
-            wyswietlanyTekst.setText("ID WIADOMOSCI TO : " + id + " " +  j);
+            wyswietlanyTekst.setText(j);
         }
         wyslijButton.setOnClickListener(new View.OnClickListener() {
             @Override

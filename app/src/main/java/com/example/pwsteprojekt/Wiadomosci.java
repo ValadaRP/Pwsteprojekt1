@@ -33,12 +33,10 @@ public class Wiadomosci extends AppCompatActivity {
     }
     public void onItemClick(AdapterView<?> parent, View view, int position, long id){
         String wiadomosc = list.getItemAtPosition(position).toString();
-        String idwiad = String.valueOf(id);
         Intent intent = new Intent(Wiadomosci.this,WiadomosciWyslij.class);
         intent.putExtra("wiadomosc", wiadomosc);
-        intent.putExtra("idwiadomosc",idwiad);
         startActivity(intent);
-        //infoW.setText(wiadomosc);
+        infoW.setText(wiadomosc);
     }
 
     public ListView getList() {
