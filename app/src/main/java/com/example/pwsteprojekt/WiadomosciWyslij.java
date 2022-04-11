@@ -41,13 +41,12 @@ public class WiadomosciWyslij extends AppCompatActivity {
                 String odpowiedz = editTextTresc.getText().toString();
                 if(!odpowiedz.isEmpty()){
                     // wyslij wiadomosc od id pobranym wczesniej
+                    String id = (String) bundle.get("idwiadomosc");
+                    String tresc = (String) bundle.get("wiadomosc");
                 }else{
                     Toast.makeText(WiadomosciWyslij.this, "Nie mozesz wyslac pustej wiadomosci", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
-
-
     }
 }
