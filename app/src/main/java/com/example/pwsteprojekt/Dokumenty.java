@@ -23,6 +23,7 @@ public class Dokumenty extends AppCompatActivity {
 
         ciagnikNaczepaButton = findViewById(R.id.ciagnikNaczepaButton);
         naczepaButton = findViewById(R.id.naczepaButton);
+        //Sama naczepa
         naczepaTak = findViewById(R.id.naczepaTak);
         naczepaNie = findViewById(R.id.naczepaNie);
         zeszytTakNie = findViewById(R.id.zeszytTakNie);
@@ -33,6 +34,9 @@ public class Dokumenty extends AppCompatActivity {
         drabinaTakNie = findViewById(R.id.drabinaTakNie);
         tyczkaDachuTakNie = findViewById(R.id.tyczkaDachuTakNie);
         tablicaDoGabarytowTakNie = findViewById(R.id.tablicaDoGabarytowTakNie);
+
+
+
 
 
         fragment = findViewById(R.id.fragment);
@@ -61,6 +65,5 @@ public class Dokumenty extends AppCompatActivity {
         drabinaTakNie.setChecked(true);
         tyczkaDachuTakNie.setChecked(true);
         tablicaDoGabarytowTakNie.setChecked(true);
-
     }
 }
