@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class Dokumenty2 extends AppCompatActivity {
 
-    Button ciagnikNaczepaButton,naczepaButton;
+    private Button ciagnikNaczepaButton,naczepaButton;
     String typ2;
 
     @Override
@@ -27,8 +27,14 @@ public class Dokumenty2 extends AppCompatActivity {
 
                 typ2 = "ciagnik + naczepa";
                 Intent intent = new Intent(Dokumenty2.this,DokumentyCN.class);
-                intent.putExtra("typ2",typ2);
-                intent.getStringExtra("typ");
+                //intent.putExtra("typ2",typ2);
+                Intent inte = getIntent();
+                Bundle b = inte.getExtras();
+                if(b!=null){
+                    String j =(String) b.get("typ");
+                    //cos mozna z tym zrobic
+                }
+                //intent.getStringExtra("typ");
                 startActivity(intent);
             }
         });
@@ -37,8 +43,8 @@ public class Dokumenty2 extends AppCompatActivity {
             public void onClick(View view) {
                 typ2 = "sama naczepa";
                 Intent intent = new Intent(Dokumenty2.this,Dokumenty3.class);
-                intent.putExtra("typ2",typ2);
-                intent.getStringExtra("typ");
+                //intent.putExtra("typ2",typ2);
+                //intent.getStringExtra("typ");
                 startActivity(intent);
             }
         });

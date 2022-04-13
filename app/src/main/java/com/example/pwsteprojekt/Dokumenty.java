@@ -13,12 +13,9 @@ import android.widget.EditText;
 
 public class Dokumenty extends AppCompatActivity {
 
-
-
-
     private Button dalejButton;
     private CheckBox odbierajacyTakNie,zdajacyTakNie;
-    String typ;
+    public String typ;
 
 
     @Override
@@ -52,7 +49,7 @@ public class Dokumenty extends AppCompatActivity {
 
         dalejButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent  intent = new Intent(Dokumenty.this, Dokumenty2.class);
+                Intent intent = new Intent(Dokumenty.this, Dokumenty2.class);
                 intent.putExtra("typ", typ);
                 startActivity(intent);
             }
