@@ -24,12 +24,8 @@ public class DokumentyCN extends AppCompatActivity {
         dalejButtonCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*
                 Intent intent = new Intent(DokumentyCN.this,DokumentyCN2.class);
-                intent.getExtras();
                 startActivity(intent);
-
-                 */
             }
         });
 

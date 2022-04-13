@@ -10,7 +10,7 @@ import android.widget.Button;
 public class Dokumenty2 extends AppCompatActivity {
 
     private Button ciagnikNaczepaButton,naczepaButton;
-    String typ2;
+    public String typ2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

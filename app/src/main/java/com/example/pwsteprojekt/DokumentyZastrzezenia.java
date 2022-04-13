@@ -17,14 +17,13 @@ public class DokumentyZastrzezenia extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dokumenty_zastrzezenia);
-        dalejButton4 = findViewById(R.id.dalejButton4);
-        zrob_zdjecie2Button = findViewById(R.id.zrob_zdjecie2Button);
+        dalejButton4 = findViewById(R.id.dalejButton7);
+        zrob_zdjecie2Button = findViewById(R.id.zrob_zdjecie3);
 
         dalejButton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(DokumentyZastrzezenia.this,DokumentyFormularz1.class);
-                intent.getExtras();
                 startActivity(intent);
             }
         });
