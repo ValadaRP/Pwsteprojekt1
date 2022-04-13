@@ -5,10 +5,12 @@
     <string name="but_usterka">usterka</string>
     <string name="but_zlecenia">zlecenia</string>
     <string name="but_mapy">mapy</string>
-    <string name="but_dokumenty">dokumenty</string>
+    <string name="but_dokumenty">przekazanie pojazdu</string>
     <string name="but_ustawienia">ustawienia</string>
 
     <string name="but_zrob_zdjecie">Zrób zdjęcie</string>
     <string name="but_wyslij">Wyślij</string>
+    <string name="but_wiadomosc_wyslij">Wyślij</string>
+    <string name="edit_trescWiadomosci">Wpisz tresc wiadomosci</string>
 
 </resources>

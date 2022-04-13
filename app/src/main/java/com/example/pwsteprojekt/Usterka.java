@@ -8,9 +8,11 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class Usterka extends AppCompatActivity {
     private Button zrob_zdjecie;
+    private EditText editTextMultiLine;
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
@@ -20,6 +22,7 @@ public class Usterka extends AppCompatActivity {
         setContentView(R.layout.activity_usterka);
 
         zrob_zdjecie = findViewById(R.id.zrob_zdjecie);
+        editTextMultiLine = findViewById(R.id.editTextMultiLine);
 
         zrob_zdjecie.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,14 +31,16 @@ public class Usterka extends AppCompatActivity {
             }
         });
     }
-
     private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         try {
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
         } catch (ActivityNotFoundException e) {
-            // display error state to the user
+            e.printStackTrace();
         }
     }
 
+    public EditText getEditTextMultiLine() {
+        return editTextMultiLine;
+    }
 }
