@@ -7,325 +7,49 @@
     tools:context=".Dokumenty">
 
     <Button
-        android:id="@+id/odbierajacyButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="40dp"
-        android:text="Odbierajacy"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/zdajacyButton"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/naczepaButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="40dp"
-        android:text="Sama naczepa"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
-        app:layout_constraintStart_toEndOf="@+id/ciagnikNaczepaButton"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/zdajacyButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="4dp"
-        android:text="Zdajacy"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/ciagnikNaczepaButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
-        android:text="Ciągnik + Naczepa"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/fragment"
-        android:layout_width="413dp"
-        android:layout_height="498dp"
-        android:layout_marginTop="12dp"
-        android:visibility="visible"
+        android:id="@+id/dalejButton"
+        android:layout_width="161dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="148dp"
+        android:text="Dalej"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/naczepaButton"
-        app:layout_constraintVertical_bias="0.013">
+        app:layout_constraintTop_toBottomOf="@+id/odbierajacyTakNie"
+        app:layout_constraintVertical_bias="0.677" />
 
-        <EditText
-            android:id="@+id/nrNaczepyEditText"
-            android:layout_width="216dp"
-            android:layout_height="43dp"
-            android:layout_marginTop="4dp"
-            android:ems="10"
-            android:hint="Nr Rejestracyjny Naczepy"
-            android:inputType="textPersonName"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.568"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <CheckBox
+        android:id="@+id/odbierajacyTakNie"
+        android:layout_width="153dp"
+        android:layout_height="108dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="40dp"
+        android:text="Odbierajacy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/zdajacyTakNie"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-        <TextView
-            android:id="@+id/naczepaTextView"
-            android:layout_width="107dp"
-            android:layout_height="33dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="4dp"
-            android:text="Naczepa"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/nrNaczepyEditText" />
-
-        <CheckBox
-            android:id="@+id/naczepaTak"
-            android:layout_width="87dp"
-            android:layout_height="32dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="4dp"
-            android:text="Tak"
-            app:layout_constraintStart_toEndOf="@+id/naczepaTextView"
-            app:layout_constraintTop_toBottomOf="@+id/nrNaczepyEditText" />
-
-        <CheckBox
-            android:id="@+id/zeszytTakNie"
-            android:layout_width="89dp"
-            android:layout_height="36dp"
-            android:layout_marginTop="40dp"
-            android:text="Tak/Nie"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.282"
-            app:layout_constraintStart_toEndOf="@+id/textView4"
-            app:layout_constraintTop_toBottomOf="@+id/nrNaczepyEditText" />
-
-        <CheckBox
-            android:id="@+id/naczepaNie"
-            android:layout_width="90dp"
-            android:layout_height="33dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="4dp"
-            android:text="Nie"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.26"
-            app:layout_constraintStart_toEndOf="@+id/naczepaTak"
-            app:layout_constraintTop_toBottomOf="@+id/nrNaczepyEditText" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="152dp"
-            android:layout_height="32dp"
-            android:layout_marginTop="4dp"
-            android:text="Zeszyt do naczepy"
-            android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@+id/naczepaTak"
-            tools:layout_editor_absoluteX="16dp" />
-
-        <TextView
-            android:id="@+id/tablicaDoGabarytowTextView"
-            android:layout_width="155dp"
-            android:layout_height="26dp"
-            android:layout_marginStart="16dp"
-            android:text="Tablica do gabarytów"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tyczkaDachuTextView"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/liczbaPasowTextView"
-            android:layout_width="107dp"
-            android:layout_height="33dp"
-            android:layout_marginStart="16dp"
-            android:text="Liczba pasów"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-        <EditText
-            android:id="@+id/liczbaPasowEditText"
-            android:layout_width="147dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="4dp"
-            android:ems="10"
-            android:inputType="number"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.202"
-            app:layout_constraintStart_toEndOf="@+id/liczbaPasowTextView"
-            app:layout_constraintTop_toBottomOf="@+id/zeszytTakNie" />
-
-        <EditText
-            android:id="@+id/liczbaNaroznikowEditText"
-            android:layout_width="143dp"
-            android:layout_height="33dp"
-            android:layout_marginTop="4dp"
-            android:ems="10"
-            android:inputType="number"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.261"
-            app:layout_constraintStart_toEndOf="@+id/liczbaNaroznikowTextView"
-            app:layout_constraintTop_toBottomOf="@+id/liczbaPasowEditText" />
-
-        <TextView
-            android:id="@+id/liczbaNaroznikowTextView"
-            android:layout_width="143dp"
-            android:layout_height="37dp"
-            android:layout_marginStart="16dp"
-            android:text="Liczba naroznikow"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/liczbaPasowTextView" />
-
-        <TextView
-            android:id="@+id/liczbaDesekAluTextView"
-            android:layout_width="145dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="4dp"
-            android:text="Liczba desek aluminiowych"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/liczbaNaroznikowTextView" />
-
-        <EditText
-            android:id="@+id/liczbaDesekAluEditText"
-            android:layout_width="146dp"
-            android:layout_height="34dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="72dp"
-            android:ems="10"
-            android:inputType="number"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.866"
-            app:layout_constraintStart_toEndOf="@+id/liczbaDesekAluTextView"
-            app:layout_constraintTop_toBottomOf="@+id/liczbaNaroznikowEditText" />
-
-        <EditText
-            android:id="@+id/liczbaDesekRozpoEditText"
-            android:layout_width="142dp"
-            android:layout_height="31dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="84dp"
-            android:ems="10"
-            android:inputType="number"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/liczbaDesekRozpoTextView"
-            app:layout_constraintTop_toBottomOf="@+id/liczbaDesekAluEditText" />
-
-        <TextView
-            android:id="@+id/liczbaDesekRozpoTextView"
-            android:layout_width="146dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="4dp"
-            android:text="Liczba desek rozporowych"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/liczbaDesekAluTextView" />
-
-        <TextView
-            android:id="@+id/drabinaTextView"
-            android:layout_width="150dp"
-            android:layout_height="23dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="4dp"
-            android:text="Drabina"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/liczbaDesekRozpoTextView" />
-
-        <CheckBox
-            android:id="@+id/drabinaTakNie"
-            android:layout_width="100dp"
-            android:layout_height="26dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="108dp"
-            android:text="Tak/Nie"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/drabinaTextView"
-            app:layout_constraintTop_toBottomOf="@+id/liczbaDesekRozpoEditText" />
-
-        <CheckBox
-            android:id="@+id/tyczkaDachuTakNie"
-            android:layout_width="100dp"
-            android:layout_height="26dp"
-            android:layout_marginEnd="108dp"
-            android:text="Tak/Nie"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/tyczkaDachuTextView"
-            app:layout_constraintTop_toBottomOf="@+id/drabinaTakNie" />
-
-        <TextView
-            android:id="@+id/tyczkaDachuTextView"
-            android:layout_width="152dp"
-            android:layout_height="23dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="4dp"
-            android:text="Tyczka Dachu"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/drabinaTextView" />
-
-        <CheckBox
-            android:id="@+id/tablicaDoGabarytowTakNie"
-            android:layout_width="100dp"
-            android:layout_height="26dp"
-            android:layout_marginEnd="108dp"
-            android:text="Tak/Nie"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.866"
-            app:layout_constraintStart_toEndOf="@+id/tablicaDoGabarytowTextView"
-            app:layout_constraintTop_toBottomOf="@+id/tyczkaDachuTakNie"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="117dp"
-            android:layout_height="35dp"
-            android:layout_marginBottom="56dp"
-            android:text="@string/but_wiadomosc_wyslij"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.469"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tablicaDoGabarytowTakNie"
-            app:layout_constraintVertical_bias="0.346" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <CheckBox
+        android:id="@+id/zdajacyTakNie"
+        android:layout_width="152dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="112dp"
+        android:text="Zdajacy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Protokół przekazania pojazów"
-        android:textSize="18sp"
+        android:layout_marginTop="152dp"
+        android:text="Przekazanie pojazdu"
+        android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/odbierajacyButton" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
