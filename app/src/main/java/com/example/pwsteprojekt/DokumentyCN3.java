@@ -23,6 +23,7 @@ public class DokumentyCN3 extends AppCompatActivity {
         dalejButton6 = findViewById(R.id.dalejButton6);
         pojazdZewnatrzTak = findViewById(R.id.pojazdZewnatrzTak);
         pojazdZewnatrzNie = findViewById(R.id.pojazdZewnatrzNie);
+        pojazdZewnatrzTak.setChecked(true);
 
         pojazdZewnatrzNie.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
@@ -49,7 +50,7 @@ public class DokumentyCN3 extends AppCompatActivity {
                     startActivity(intent);
                 }
                 if(pojazdZewnatrzNie.isChecked() == true){
-                    Intent intent = new Intent(DokumentyCN3.this,DokumentyZastrzezeniaCN.class);
+                    Intent intent = new Intent(DokumentyCN3.this,DokumentyZastrzezeniaCN2.class);
                     startActivity(intent);
                 }
             }

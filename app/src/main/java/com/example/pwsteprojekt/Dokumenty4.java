@@ -12,6 +12,7 @@ import android.widget.CompoundButton;
 public class Dokumenty4 extends AppCompatActivity {
     private CheckBox naczepaOdbiorTak,naczepaOdbiorNie;
     private Button dalejButton3;
+    DokumentyCN3 dokumentyCN3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

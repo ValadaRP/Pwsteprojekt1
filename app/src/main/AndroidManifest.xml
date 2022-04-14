@@ -17,6 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PwsteProjekt">
         <activity
+            android:name=".DokumentyFormularzCN2"
+            android:exported="true" />
+        <activity
+            android:name=".DokumentyZastrzezeniaCN2"
+            android:exported="true" />
+        <activity
             android:name=".DokumentyFormularzCN1"
             android:exported="true" />
         <activity

@@ -9,33 +9,32 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 
-public class DokumentyZastrzezenia extends AppCompatActivity {
-    private Button dalejButton4,zrob_zdjecie2Button;
-    static final int REQUEST_IMAGE_CAPTURE = 1;
+public class DokumentyZastrzezeniaCN2 extends AppCompatActivity {
+    private Button dalejButton8,zrob_zdjecie4;
+    final static int REQUEST_IMAGE_CAPTURE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dokumenty_zastrzezenia);
-        dalejButton4 = findViewById(R.id.dalejButton8);
-        zrob_zdjecie2Button = findViewById(R.id.zrob_zdjecie4);
+        setContentView(R.layout.activity_dokumenty_zastrzezenia_cn);
 
-        dalejButton4.setOnClickListener(new View.OnClickListener() {
+        dalejButton8 = findViewById(R.id.dalejButton8);
+        zrob_zdjecie4 = findViewById(R.id.zrob_zdjecie4);
+
+        dalejButton8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DokumentyZastrzezenia.this,DokumentyFormularz1.class);
+                Intent intent = new Intent(DokumentyZastrzezeniaCN2.this,DokumentyFormularzCN1.class);
                 startActivity(intent);
             }
         });
 
-        zrob_zdjecie2Button.setOnClickListener(new View.OnClickListener() {
+        zrob_zdjecie4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dispatchTakePictureIntent();
             }
         });
-
-
     }
 
     private void dispatchTakePictureIntent() {
@@ -46,6 +45,4 @@ public class DokumentyZastrzezenia extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
-
 }

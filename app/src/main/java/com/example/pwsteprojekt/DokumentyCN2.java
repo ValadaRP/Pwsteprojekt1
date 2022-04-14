@@ -21,6 +21,8 @@ public class DokumentyCN2 extends AppCompatActivity {
         wnetrzeKabinyTak = findViewById(R.id.wnetrzeKabinyTak);
         wnetrzeKabinyNie = findViewById(R.id.wnetrzeKabinyNie);
 
+        wnetrzeKabinyTak.setChecked(true);
+
         wnetrzeKabinyNie.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
                 if(isChecked){
