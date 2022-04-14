@@ -31,6 +31,8 @@ public class DokumentyFormularz1 extends AppCompatActivity {
 
         wyslijDokumentButton = findViewById(R.id.wyslijDokumentButton);
 
+        zaznaczDomyslnie();
+
         wyslijDokumentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,5 +41,12 @@ public class DokumentyFormularz1 extends AppCompatActivity {
         });
 
 
+    }
+
+    public void zaznaczDomyslnie(){
+        zeszytCheckBox.setChecked(true);
+        drabinaCheckBox.setChecked(true);
+        tyczkaCheckBox.setChecked(true);
+        tablicaGabarytowCheckBox.setChecked(true);
     }
 }
