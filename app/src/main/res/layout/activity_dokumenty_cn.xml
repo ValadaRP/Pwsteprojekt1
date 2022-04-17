@@ -11,7 +11,8 @@
         android:layout_width="258dp"
         android:layout_height="43dp"
         android:layout_marginTop="92dp"
-        android:text="Ciagnik + Naczepa"
+        android:text="@string/CiagnikNaczepaTV"
+        android:textAlignment="center"
         android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -24,12 +25,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
         android:ems="10"
-        android:hint="Nr rejestracyjny ciagnika"
+        android:hint="@string/nrRejestracyjnyCiagnika"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <EditText
         android:id="@+id/nrRejNaczepyEditText"
@@ -37,19 +40,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:ems="10"
-        android:hint="Nr rejestracyjny naczepy"
+        android:hint="@string/nrRejestracyjnyNaczepyHint"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nrRejCiagnikaEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/nrRejCiagnikaEditText"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/dalejButtonCN"
         android:layout_width="201dp"
         android:layout_height="65dp"
         android:layout_marginBottom="208dp"
-        android:text="Dalej"
+        android:text="@string/but_dalej"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

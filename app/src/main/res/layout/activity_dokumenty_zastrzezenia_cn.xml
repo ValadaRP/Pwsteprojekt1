@@ -11,7 +11,7 @@
         android:layout_width="141dp"
         android:layout_height="77dp"
         android:layout_marginTop="124dp"
-        android:text="Dalej"
+        android:text="@string/but_dalej"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/zrob_zdjecie4" />
@@ -35,7 +35,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="74dp"
         android:layout_marginBottom="165dp"
-        android:text="Zrob zdjecie usterki"
+        android:text="@string/zrobZdjecieUsterki"
+        android:textAlignment="center"
         android:textSize="26sp"
         app:layout_constraintBottom_toTopOf="@+id/zrob_zdjecie4"
         app:layout_constraintEnd_toEndOf="parent"

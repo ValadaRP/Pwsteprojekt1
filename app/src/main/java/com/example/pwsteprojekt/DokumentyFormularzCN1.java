@@ -28,7 +28,6 @@ public class DokumentyFormularzCN1 extends AppCompatActivity {
         pozwolenieTakNie = findViewById(R.id.pozwolenieTakNie);
         dalejButton9 = findViewById(R.id.dalejButton9);
 
-
         zaznaczDomyslnie();
 
         dalejButton9.setOnClickListener(new View.OnClickListener() {

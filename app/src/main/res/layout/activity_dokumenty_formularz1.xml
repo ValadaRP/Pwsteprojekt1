@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:textAlignment="center"
     tools:context=".DokumentyFormularz1">
 
     <TextView
@@ -11,7 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Dokumenty Naczepy"
+        android:text="@string/dokumentyNaczepy"
+        android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +25,8 @@
         android:layout_height="28dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="20dp"
-        android:text="Zeszyt do naczepy"
+        android:text="@string/zeszytDoNaczepy"
+        android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -33,18 +36,20 @@
         android:layout_width="128dp"
         android:layout_height="45dp"
         android:layout_marginTop="12dp"
-        android:text="Tak/Nie"
+        android:text="@string/checkBox_taknie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.414"
         app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="277dp"
         android:layout_height="30dp"
         android:layout_marginTop="20dp"
-        android:text="Wyposazenie naczepy"
+        android:text="@string/wyposażenieNaczepy"
+        android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -53,22 +58,24 @@
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="128dp"
-        android:layout_height="29dp"
-        android:layout_marginStart="28dp"
+        android:layout_width="135dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:text="Liczba pasów"
+        android:text="@string/liczbaPasow"
+        android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="132dp"
+        android:layout_width="135dp"
         android:layout_height="42dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:text="Liczba narożników"
+        android:text="@string/liczbaNaroznikow"
+        android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
@@ -78,19 +85,21 @@
         android:layout_width="135dp"
         android:layout_height="45dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:text="Liczba desek rozporowych"
+        android:layout_marginTop="12dp"
+        android:text="@string/liczbaDesekRozporowych"
+        android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="134dp"
+        android:layout_width="135dp"
         android:layout_height="45dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
-        android:text="Liczba desek aluminiowych"
+        android:text="@string/liczbaDesekAluminiowych"
+        android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
@@ -101,80 +110,92 @@
         android:layout_height="45dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="Podaj liczbe szt"
+        android:hint="@string/podajLiczbeSztHint"
+        android:hintTextColor="#757575"
+        android:importantForAutofill="no"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toEndOf="@+id/textView11"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,TextContrastCheck" />
 
     <EditText
         android:id="@+id/liczbaNaroznikowEditText"
-        android:layout_width="165dp"
+        android:layout_width="162dp"
         android:layout_height="45dp"
         android:layout_marginTop="4dp"
         android:ems="10"
-        android:hint="Podaj liczbe szt"
+        android:hint="@string/podajLiczbeSztHint"
+        android:importantForAutofill="no"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView12"
-        app:layout_constraintTop_toBottomOf="@+id/liczbaPasowEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/liczbaPasowEditText"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <EditText
         android:id="@+id/deskiAluminioweEditText"
-        android:layout_width="172dp"
-        android:layout_height="44dp"
+        android:layout_width="162dp"
+        android:layout_height="45dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:hint="Podaj liczbe szt"
+        android:hint="@string/podajLiczbeSztHint"
+        android:importantForAutofill="no"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.543"
+        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toEndOf="@+id/textView13"
-        app:layout_constraintTop_toBottomOf="@+id/liczbaNaroznikowEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/liczbaNaroznikowEditText"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <EditText
         android:id="@+id/deskiRozporoweEditText"
-        android:layout_width="174dp"
+        android:layout_width="162dp"
         android:layout_height="45dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
-        android:hint="Podaj liczbe szt"
+        android:hint="@string/podajLiczbeSztHint"
+        android:importantForAutofill="no"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toEndOf="@+id/textView14"
-        app:layout_constraintTop_toBottomOf="@+id/deskiAluminioweEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/deskiAluminioweEditText"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
     <TextView
         android:id="@+id/textView15"
-        android:layout_width="132dp"
+        android:layout_width="135dp"
         android:layout_height="32dp"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="12dp"
-        android:text="Drabina"
+        android:text="@string/drabina"
+        android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <TextView
         android:id="@+id/textView16"
-        android:layout_width="144dp"
+        android:layout_width="135dp"
         android:layout_height="34dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:text="Tyczka dachu"
+        android:layout_marginTop="12dp"
+        android:text="@string/tyczkaDachu"
+        android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="165dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:text="Tablica do Gabarytow"
+        android:layout_width="136dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/tablicaDoGabarytow"
+        android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
@@ -183,10 +204,10 @@
         android:id="@+id/drabinaCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Tak/Nie"
+        android:layout_marginTop="8dp"
+        android:text="@string/checkBox_taknie"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toEndOf="@+id/textView15"
         app:layout_constraintTop_toBottomOf="@+id/deskiRozporoweEditText" />
 
@@ -194,9 +215,10 @@
         android:id="@+id/tyczkaCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Tak/Nie"
+        android:layout_marginTop="4dp"
+        android:text="@string/checkBox_taknie"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
         app:layout_constraintStart_toEndOf="@+id/textView16"
         app:layout_constraintTop_toBottomOf="@+id/drabinaCheckBox" />
 
@@ -204,10 +226,10 @@
         android:id="@+id/tablicaGabarytowCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Tak/Nie"
+        android:layout_marginTop="4dp"
+        android:text="@string/checkBox_taknie"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.477"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toEndOf="@+id/textView17"
         app:layout_constraintTop_toBottomOf="@+id/tyczkaCheckBox" />
 
