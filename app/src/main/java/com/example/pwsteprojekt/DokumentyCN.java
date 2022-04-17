@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class DokumentyCN extends AppCompatActivity {
     private EditText nrRejCiagnikaEditText, nrRejNaczepyEditText;
@@ -21,11 +22,18 @@ public class DokumentyCN extends AppCompatActivity {
         nrRejNaczepyEditText = findViewById(R.id.nrRejNaczepyEditText);
         dalejButtonCN = findViewById(R.id.dalejButtonCN);
 
+
+
         dalejButtonCN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DokumentyCN.this,DokumentyCN2.class);
-                startActivity(intent);
+
+                if(nrRejCiagnikaEditText.getText().toString().isEmpty() || nrRejNaczepyEditText.getText().toString().isEmpty()){
+                    Toast.makeText(DokumentyCN.this, "Prosze wpisać nr rejestracyjny ciagnika i naczepy", Toast.LENGTH_SHORT).show();
+                }else{
+                    Intent intent = new Intent(DokumentyCN.this,DokumentyCN2.class);
+                    startActivity(intent);
+                }
             }
         });
 

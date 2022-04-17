@@ -25,6 +25,7 @@ public class Dokumenty3 extends AppCompatActivity {
         nrNaczepyEditText = findViewById(R.id.nrNaczepyEditText);
         dalejButton2 = findViewById(R.id.dalejButton2);
 
+
         nrRejNaczepy = nrNaczepyEditText.getText().toString();
 
         dalejButton2.setOnClickListener(new View.OnClickListener() {

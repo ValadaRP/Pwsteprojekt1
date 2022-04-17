@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class Dokumenty2 extends AppCompatActivity {
 
@@ -20,6 +23,18 @@ public class Dokumenty2 extends AppCompatActivity {
         ciagnikNaczepaButton = findViewById(R.id.ciagnikNaczepaButton);
         naczepaButton = findViewById(R.id.naczepaButton);
 
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+
+        String typ = (String) bundle.get("typ");
+
+//        if(bundle!=null){
+//            String typ = (String) bundle.get("typ");
+//
+//           // typ "Zdajacy lub Odbierajacy"
+//        }
+
+
 
         ciagnikNaczepaButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,14 +42,14 @@ public class Dokumenty2 extends AppCompatActivity {
 
                 typ2 = "ciagnik + naczepa";
                 Intent intent = new Intent(Dokumenty2.this,DokumentyCN.class);
-                //intent.putExtra("typ2",typ2);
+                intent.putExtra("typ",typ);
+                intent.putExtra("typ2",typ2);
                 Intent inte = getIntent();
                 Bundle b = inte.getExtras();
                 if(b!=null){
                     String j =(String) b.get("typ");
                     //cos mozna z tym zrobic
                 }
-                //intent.getStringExtra("typ");
                 startActivity(intent);
             }
         });
@@ -43,10 +58,10 @@ public class Dokumenty2 extends AppCompatActivity {
             public void onClick(View view) {
                 typ2 = "sama naczepa";
                 Intent intent = new Intent(Dokumenty2.this,Dokumenty3.class);
-                //intent.putExtra("typ2",typ2);
-                //intent.getStringExtra("typ");
+                intent.putExtra("typ2",typ2);
                 startActivity(intent);
             }
         });
+
     }
 }

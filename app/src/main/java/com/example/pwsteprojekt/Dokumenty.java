@@ -15,7 +15,7 @@ public class Dokumenty extends AppCompatActivity {
 
     private Button dalejButton;
     private CheckBox odbierajacyTakNie,zdajacyTakNie;
-    public String typ;
+    public String typ = "";
 
 
     @Override
@@ -56,6 +56,9 @@ public class Dokumenty extends AppCompatActivity {
         });
 
 
+    }
+    public String getTyp() {
+        return typ;
     }
 
 }

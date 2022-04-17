@@ -111,7 +111,6 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/podajLiczbeSztHint"
-        android:hintTextColor="#757575"
         android:importantForAutofill="no"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
