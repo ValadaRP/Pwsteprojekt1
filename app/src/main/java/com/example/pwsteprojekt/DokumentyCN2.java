@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.TextView;
 
 public class DokumentyCN2 extends AppCompatActivity {
         private Button dalejButton5;
@@ -20,6 +21,7 @@ public class DokumentyCN2 extends AppCompatActivity {
         dalejButton5 = findViewById(R.id.dalejButton5);
         wnetrzeKabinyTak = findViewById(R.id.wnetrzeKabinyTak);
         wnetrzeKabinyNie = findViewById(R.id.wnetrzeKabinyNie);
+
 
         wnetrzeKabinyTak.setChecked(true);
 

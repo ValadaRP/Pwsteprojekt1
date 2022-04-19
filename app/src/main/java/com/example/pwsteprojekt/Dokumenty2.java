@@ -44,12 +44,6 @@ public class Dokumenty2 extends AppCompatActivity {
                 Intent intent = new Intent(Dokumenty2.this,DokumentyCN.class);
                 intent.putExtra("typ",typ);
                 intent.putExtra("typ2",typ2);
-                Intent inte = getIntent();
-                Bundle b = inte.getExtras();
-                if(b!=null){
-                    String j =(String) b.get("typ");
-                    //cos mozna z tym zrobic
-                }
                 startActivity(intent);
             }
         });

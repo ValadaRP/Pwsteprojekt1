@@ -56,5 +56,6 @@
     <string name="naczepa">Naczepa</string>
     <string name="podajLiczbeSztHint">Podaj liczbe szt</string>
     <string name="nrRejestracyjnyCiagnika">Nr rejestracyjny Ciagnika</string>
+    <string name="utworzNoweZlecenie">Utworz nowe zlecenie</string>
 
 </resources>

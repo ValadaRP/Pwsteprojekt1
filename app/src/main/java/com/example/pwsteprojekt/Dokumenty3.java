@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class Dokumenty3 extends AppCompatActivity {
 
@@ -26,16 +27,17 @@ public class Dokumenty3 extends AppCompatActivity {
         dalejButton2 = findViewById(R.id.dalejButton2);
 
 
-        nrRejNaczepy = nrNaczepyEditText.getText().toString();
-
         dalejButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Dokumenty3.this,Dokumenty4.class);
-                //intent.getStringExtra("typ");
-                //intent.getStringExtra("typ2");
-                //intent.putExtra("nrRejNaczepy",nrRejNaczepy);
-                startActivity(intent);
+                if(nrNaczepyEditText.getText().toString().isEmpty()){
+                    Toast.makeText(Dokumenty3.this, "Nie podano nr rejestracyjnego naczepy", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Intent intent = new Intent(Dokumenty3.this,Dokumenty4.class);
+                    startActivity(intent);
+                }
+
             }
         });
 

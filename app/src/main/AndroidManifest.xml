@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PwsteProjekt">
         <activity
+            android:name=".ZleceniaInfo"
+            android:exported="true" />
+        <activity
             android:name=".DokumentyFormularzCN2"
             android:exported="true" />
         <activity
