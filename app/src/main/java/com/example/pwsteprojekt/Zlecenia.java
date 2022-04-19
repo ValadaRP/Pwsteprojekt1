@@ -55,7 +55,8 @@ public class Zlecenia extends AppCompatActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                // wyswietl informacje
+               Intent intent = new Intent(Zlecenia.this,ZleceniaInfo.class);
+               startActivity(intent);
             }
         });
     }
