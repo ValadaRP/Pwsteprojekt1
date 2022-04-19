@@ -3,67 +3,62 @@ package com.example.pwsteprojekt;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 
 public class Dokumenty extends AppCompatActivity {
 
-    private ConstraintLayout fragment;
-    private EditText nrNaczepyEditText,liczbaPasowEditText, liczbaNaroznikowEditText,liczbaDesekAluEditText,liczbaDesekRozpoEditText;
-    private Button ciagnikNaczepaButton,naczepaButton;
-    private CheckBox naczepaTak,naczepaNie,zeszytTakNie,drabinaTakNie,tyczkaDachuTakNie,tablicaDoGabarytowTakNie;
+    private Button dalejButton;
+    private CheckBox odbierajacyTakNie,zdajacyTakNie;
+    public String typ = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dokumenty);
 
-        ciagnikNaczepaButton = findViewById(R.id.ciagnikNaczepaButton);
-        naczepaButton = findViewById(R.id.naczepaButton);
-        //Sama naczepa
-        naczepaTak = findViewById(R.id.naczepaTak);
-        naczepaNie = findViewById(R.id.naczepaNie);
-        zeszytTakNie = findViewById(R.id.zeszytTakNie);
-        liczbaPasowEditText= findViewById(R.id.liczbaPasowEditText);
-        liczbaNaroznikowEditText= findViewById(R.id.liczbaNaroznikowEditText);
-        liczbaDesekAluEditText = findViewById(R.id.liczbaDesekAluEditText);
-        liczbaDesekRozpoEditText= findViewById(R.id.liczbaDesekRozpoEditText);
-        drabinaTakNie = findViewById(R.id.drabinaTakNie);
-        tyczkaDachuTakNie = findViewById(R.id.tyczkaDachuTakNie);
-        tablicaDoGabarytowTakNie = findViewById(R.id.tablicaDoGabarytowTakNie);
+        dalejButton = findViewById(R.id.dalejButton);
+        odbierajacyTakNie = findViewById(R.id.odbierajacyTakNie);
+        zdajacyTakNie = findViewById(R.id.zdajacyTakNie);
 
 
-
-
-
-        fragment = findViewById(R.id.fragment);
-        fragment.setVisibility(View.INVISIBLE);
-        nrNaczepyEditText = findViewById(R.id.nrNaczepyEditText);
-
-        ciagnikNaczepaButton.setOnClickListener(new View.OnClickListener() {
+        odbierajacyTakNie.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+                if(isChecked){
+                    typ = "Odbierajacy";
+                    zdajacyTakNie.setChecked(false);
+                }
+            }
+        }
+        );
+        zdajacyTakNie.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View view) {
-
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    typ = "Zdajacy";
+                    odbierajacyTakNie.setChecked(false);
+                }
             }
         });
-        naczepaButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                fragment.setVisibility(View.VISIBLE);
-                zaznaczDomyslnie();
 
+        dalejButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(Dokumenty.this, Dokumenty2.class);
+                intent.putExtra("typ", typ);
+                startActivity(intent);
             }
         });
 
 
     }
-    public void zaznaczDomyslnie(){
-        zeszytTakNie.setChecked(true);
-        drabinaTakNie.setChecked(true);
-        tyczkaDachuTakNie.setChecked(true);
-        tablicaDoGabarytowTakNie.setChecked(true);
+    public String getTyp() {
+        return typ;
     }
+
 }

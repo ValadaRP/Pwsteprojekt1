@@ -6,14 +6,14 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-
-import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button button_usterka,button_wiadomosci,button_zlecenia,button_mapy,button_dokumenty,button_ustawienia;
+    private ConstraintLayout mainLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,4 +70,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }

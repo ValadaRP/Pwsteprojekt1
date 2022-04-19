@@ -40,7 +40,7 @@ public class WiadomosciWyslij extends AppCompatActivity {
             public void onClick(View view) {
                 String odpowiedz = editTextTresc.getText().toString();
                 if(!odpowiedz.isEmpty()){
-                    // wyslij wiadomosc od id pobranym wczesniej
+                    // wyslij wiadomosc od id pobranym wczesniej do bazy
                     String id = (String) bundle.get("idwiadomosc");
                     String tresc = (String) bundle.get("wiadomosc");
                 }else{

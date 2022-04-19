@@ -6,9 +6,8 @@
         android:name="android.hardware.camera"
         android:required="true" />
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -17,6 +16,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PwsteProjekt">
+        <activity
+            android:name=".ZleceniaInfo"
+            android:exported="true" />
+        <activity
+            android:name=".DokumentyFormularzCN2"
+            android:exported="true" />
+        <activity
+            android:name=".DokumentyZastrzezeniaCN2"
+            android:exported="true" />
+        <activity
+            android:name=".DokumentyFormularzCN1"
+            android:exported="true" />
+        <activity
+            android:name=".DokumentyZastrzezeniaCN"
+            android:exported="true" />
+        <activity
+            android:name=".DokumentyCN3"
+            android:exported="true" />
+        <activity
+            android:name=".DokumentyCN2"
+            android:exported="true" />
+        <activity
+            android:name=".DokumentyFormularz1"
+            android:exported="true" />
+        <activity
+            android:name=".DokumentyZastrzezenia"
+            android:exported="true" />
+        <activity
+            android:name=".WiadomosciWyslij"
+            android:exported="true" />
         <activity
             android:name=".Ustawienia"
             android:exported="false" />
@@ -35,6 +64,18 @@
         <activity
             android:name=".Usterka"
             android:exported="false" />
+        <activity
+            android:name=".Dokumenty2"
+            android:exported="true" />
+        <activity
+            android:name=".Dokumenty3"
+            android:exported="true" />
+        <activity
+            android:name=".Dokumenty4"
+            android:exported="true" />
+        <activity
+            android:name=".DokumentyCN"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
