@@ -57,5 +57,7 @@
     <string name="podajLiczbeSztHint">Podaj liczbe szt</string>
     <string name="nrRejestracyjnyCiagnika">Nr rejestracyjny Ciagnika</string>
     <string name="utworzNoweZlecenie">Utworz nowe zlecenie</string>
+    <string name="wiadOdebrane">Odebrane</string>
+    <string name="wiadWyslane">Wyslane</string>
 
 </resources>

@@ -17,6 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PwsteProjekt">
         <activity
+            android:name=".WiadomosciWyslane"
+            android:exported="false" />
+        <activity
+            android:name=".WiadomosciMain"
+            android:exported="false" />
+        <activity
             android:name=".ZleceniaInfo"
             android:exported="true" />
         <activity
@@ -59,7 +65,7 @@
             android:name=".Zlecenia"
             android:exported="false" />
         <activity
-            android:name=".Wiadomosci"
+            android:name=".WiadomosciOdebrane"
             android:exported="false" />
         <activity
             android:name=".Usterka"

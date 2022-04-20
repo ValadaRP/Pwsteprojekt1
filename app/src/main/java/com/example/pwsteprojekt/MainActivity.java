@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         button_wiadomosci.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,Wiadomosci.class);
+                Intent intent = new Intent(MainActivity.this,WiadomosciMain.class);
                 startActivity(intent);
             }
         });
