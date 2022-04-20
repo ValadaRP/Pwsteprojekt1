@@ -13,9 +13,10 @@ import android.widget.Toast;
 
 public class WiadomosciWyslij extends AppCompatActivity {
 
-    private TextView nadawcaTV,odbiorcaTV,dataWyslaniaTV,tematTV,trescTV;
+    private TextView nadawcaTV,odbiorcaTV,dataWyslaniaTV,tematTV,trescTV,textView52;
     private Button wyslijButton;
     private EditText editTextTresc;
+    WiadomosciMain wiadomosciMain = new WiadomosciMain();
 
 
 
@@ -29,6 +30,7 @@ public class WiadomosciWyslij extends AppCompatActivity {
         Bundle bundle = intent.getExtras();
 
         nadawcaTV = findViewById(R.id.nadawcaTV);
+        textView52 = findViewById(R.id.textView52);
         odbiorcaTV = findViewById(R.id.nadawcaTV);
         dataWyslaniaTV = findViewById(R.id.dataWyslaniaTV);
         tematTV = findViewById(R.id.tematTV);
@@ -38,8 +40,9 @@ public class WiadomosciWyslij extends AppCompatActivity {
 
         if(bundle!=null)
         {
-            String id = (String) bundle.get("idwiadomosc");
-            String j =(String) bundle.get("wiadomosc");
+            String typWiadomosci = (String) bundle.get("typWiadomosci");
+            //textView52.setText(wiadomosciMain.getTypWiadomosci());
+            textView52.setText(typWiadomosci);
         }
         wyslijButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -11,6 +11,16 @@ public class WiadomosciMain extends AppCompatActivity {
 
     private Button odebraneButton,wyslaneButton;
 
+    public String getTypWiadomosci() {
+        return typWiadomosci;
+    }
+
+    public void setTypWiadomosci(String typWiadomosci) {
+        this.typWiadomosci = typWiadomosci;
+    }
+
+    public String typWiadomosci = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,18 +28,21 @@ public class WiadomosciMain extends AppCompatActivity {
 
         odebraneButton = findViewById(R.id.odebraneButton);
         wyslaneButton = findViewById(R.id.wyslaneButton);
-
         odebraneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                typWiadomosci = "Odebrane";
                 Intent intent = new Intent(WiadomosciMain.this, WiadomosciOdebrane.class);
+                intent.putExtra("typWiadomosci",typWiadomosci);
                 startActivity(intent);
             }
         });
         wyslaneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                typWiadomosci = "Wyslane";
                 Intent intent = new Intent(WiadomosciMain.this,WiadomosciWyslane.class);
+                intent.putExtra("typWiadomosci",typWiadomosci);
                 startActivity(intent);
             }
         });
