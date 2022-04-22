@@ -53,6 +53,8 @@ public class TestDB extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(Void... voids) {
+            //Przykład
+            String test;
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.56.1/test","piotrek123","12345");
