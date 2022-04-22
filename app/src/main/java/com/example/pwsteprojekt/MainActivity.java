@@ -8,11 +8,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button button_usterka,button_wiadomosci,button_zlecenia,button_mapy,button_dokumenty,button_ustawienia;
     private ConstraintLayout mainLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,10 +31,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
         button_usterka.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,Usterka.class);
+                Intent intent = new Intent(MainActivity.this,TestDB.class);
                 startActivity(intent);
             }
         });
@@ -52,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, Mapy.class);
                 startActivity(intent);
+
             }
         });
         button_dokumenty.setOnClickListener(new View.OnClickListener() {
