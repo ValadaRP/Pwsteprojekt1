@@ -54,12 +54,12 @@ public class TestDB extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... voids) {
             //Przykład
-            String test;
+
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.56.1/test","piotrek123","12345");
+                Connection connection = DriverManager.getConnection("jdbc:mysql://mysql.mikr.us/db_j206","j206","0EF8_edee39");
                 Statement statement = connection.createStatement();
-                ResultSet resultSet = statement.executeQuery("Select * from uzytkownicy");
+                ResultSet resultSet = statement.executeQuery("Select * from pracownik");
                 while (resultSet.next()){
                     records += resultSet.getString(2);
                 }
