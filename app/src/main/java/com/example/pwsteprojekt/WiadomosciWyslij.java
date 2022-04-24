@@ -2,6 +2,7 @@ package com.example.pwsteprojekt;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,11 +13,14 @@ import android.widget.Toast;
 
 public class WiadomosciWyslij extends AppCompatActivity {
 
-    private TextView wyswietlanyTekst;
+    private TextView nadawcaTV,odbiorcaTV,dataWyslaniaTV,tematTV,trescTV,textView52;
     private Button wyslijButton;
     private EditText editTextTresc;
+    WiadomosciMain wiadomosciMain = new WiadomosciMain();
 
 
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,15 +29,20 @@ public class WiadomosciWyslij extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
 
-        wyswietlanyTekst = findViewById(R.id.wyswietlanyTekst);
+        nadawcaTV = findViewById(R.id.nadawcaTV);
+        textView52 = findViewById(R.id.textView52);
+        odbiorcaTV = findViewById(R.id.nadawcaTV);
+        dataWyslaniaTV = findViewById(R.id.dataWyslaniaTV);
+        tematTV = findViewById(R.id.tematTV);
+        trescTV = findViewById(R.id.trescTV);
         wyslijButton = findViewById(R.id.wyslijButton);
         editTextTresc = findViewById(R.id.editTextTresc);
 
         if(bundle!=null)
         {
-            String id = (String) bundle.get("idwiadomosc");
-            String j =(String) bundle.get("wiadomosc");
-            wyswietlanyTekst.setText("ID wiadomosci: " + id + " " +  j);
+            String typWiadomosci = (String) bundle.get("typWiadomosci");
+            //textView52.setText(wiadomosciMain.getTypWiadomosci());
+            textView52.setText(typWiadomosci);
         }
         wyslijButton.setOnClickListener(new View.OnClickListener() {
             @Override
