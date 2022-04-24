@@ -60,4 +60,6 @@
     <string name="wiadOdebrane">Odebrane</string>
     <string name="wiadWyslane">Wyslane</string>
 
+    <string name="trybJasny">Tryb jasny</string>
+    <string name="nrPojazdu">Nr Pojazdu</string>
 </resources>
