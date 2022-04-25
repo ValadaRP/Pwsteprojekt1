@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class WiadomosciMain extends AppCompatActivity {
 
-    private Button odebraneButton,wyslaneButton;
+    private Button odebraneButton,wyslaneButton,utworzButton;
 
     public String getTypWiadomosci() {
         return typWiadomosci;
@@ -28,6 +28,7 @@ public class WiadomosciMain extends AppCompatActivity {
 
         odebraneButton = findViewById(R.id.odebraneButton);
         wyslaneButton = findViewById(R.id.wyslaneButton);
+        utworzButton = findViewById(R.id.utworzButton);
         odebraneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,6 +44,13 @@ public class WiadomosciMain extends AppCompatActivity {
                 typWiadomosci = "Wyslane";
                 Intent intent = new Intent(WiadomosciMain.this,WiadomosciWyslane.class);
                 intent.putExtra("typWiadomosci",typWiadomosci);
+                startActivity(intent);
+            }
+        });
+        utworzButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WiadomosciMain.this,NowaWiadomosc.class);
                 startActivity(intent);
             }
         });

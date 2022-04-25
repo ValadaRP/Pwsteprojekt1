@@ -20,6 +20,7 @@ public class Zlecenia extends AppCompatActivity {
     private ListView list;
     private ArrayAdapter<String> adapter;
     private ArrayList<String> zlecenia;
+    Dokumenty dokumenty = new Dokumenty();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

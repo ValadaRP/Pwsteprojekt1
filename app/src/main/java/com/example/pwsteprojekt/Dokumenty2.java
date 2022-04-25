@@ -13,6 +13,11 @@ import org.w3c.dom.Text;
 public class Dokumenty2 extends AppCompatActivity {
 
     private Button ciagnikNaczepaButton,naczepaButton;
+
+    public String getTyp2() {
+        return typ2;
+    }
+
     public String typ2;
 
     @Override

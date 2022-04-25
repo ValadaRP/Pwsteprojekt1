@@ -15,6 +15,11 @@ public class Dokumenty3 extends AppCompatActivity {
 
     private EditText nrNaczepyEditText;
     private Button dalejButton2;
+
+    public String getNrRejNaczepy() {
+        return nrRejNaczepy;
+    }
+
     public String nrRejNaczepy;
 
 
@@ -34,6 +39,7 @@ public class Dokumenty3 extends AppCompatActivity {
                     Toast.makeText(Dokumenty3.this, "Nie podano nr rejestracyjnego naczepy", Toast.LENGTH_SHORT).show();
                 }
                 else{
+                    nrRejNaczepy = nrNaczepyEditText.getText().toString();
                     Intent intent = new Intent(Dokumenty3.this,Dokumenty4.class);
                     startActivity(intent);
                 }

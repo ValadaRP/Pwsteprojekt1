@@ -12,6 +12,16 @@ import android.widget.CompoundButton;
 public class Dokumenty4 extends AppCompatActivity {
     private CheckBox naczepaOdbiorTak,naczepaOdbiorNie;
     private Button dalejButton3;
+
+    public String getNaczepaOdbiorT() {
+        return naczepaOdbiorT;
+    }
+
+    public String getNaczepaOdbiorN() {
+        return naczepaOdbiorN;
+    }
+
+    public String naczepaOdbiorT,naczepaOdbiorN;
     DokumentyCN3 dokumentyCN3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +36,7 @@ public class Dokumenty4 extends AppCompatActivity {
         naczepaOdbiorNie.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
                 if(isChecked){
+                    naczepaOdbiorN = "Nie";
                     naczepaOdbiorTak.setChecked(false);
                 }
             }
@@ -35,6 +46,7 @@ public class Dokumenty4 extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
+                    naczepaOdbiorT = "Tak";
                     naczepaOdbiorNie.setChecked(false);
                 }
             }
