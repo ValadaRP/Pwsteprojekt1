@@ -37,7 +37,7 @@
         tools:ignore="TextContrastCheck" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/wyslij_usterka"
         android:layout_width="155dp"
         android:layout_height="114dp"
         android:text="@string/but_wyslij"

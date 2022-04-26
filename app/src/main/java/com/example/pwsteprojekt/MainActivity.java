@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         button_usterka.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,TestDB.class);
+                Intent intent = new Intent(MainActivity.this,Usterka.class);
                 startActivity(intent);
             }
         });
