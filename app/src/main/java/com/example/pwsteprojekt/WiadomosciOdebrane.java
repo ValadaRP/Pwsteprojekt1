@@ -37,7 +37,6 @@ public class WiadomosciOdebrane extends AppCompatActivity {
         //String[] wiadomosci = new String[]{WiadomosciWyslij.TaskA().execute()};
         wiadomosciOdebrane = new ArrayList<String>();
       //  Collections.addAll(wiadomosciOdebrane,new String[]{"Android","IPhone","JEDZIE POCIAG Z DALEKA NA NIKOGO NIE CZEKA","WindowsMobile","Blackberry","WebOS","Ubuntu","Windows7","Max OS X",});
-        //Collections.addAll(wiadomosciOdebrane, new String[]{String.valueOf(new TaskId().execute())});
         Collections.addAll(wiadomosciOdebrane, new String[]{"ID: 1","ID: 2","ID: 3","ID: 4","ID: 5","ID: 6"});
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,wiadomosciOdebrane);

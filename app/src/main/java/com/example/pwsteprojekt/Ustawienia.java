@@ -7,16 +7,29 @@ import androidx.appcompat.app.AppCompatDelegate;
 
 import android.os.Bundle;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.Switch;
 
 public class Ustawienia extends AppCompatActivity {
     private Switch aSwitch;
+    private EditText nrPojazduUstawienia;
+
+    public String getNrPojazduSettings() {
+        return nrPojazduSettings;
+    }
+
+    public String nrPojazduSettings;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ustawienia);
 
         aSwitch = findViewById(R.id.aSwitch);
+        nrPojazduUstawienia = findViewById(R.id.nrPojazduUstawienia);
+
+        if(!nrPojazduUstawienia.getText().toString().isEmpty()){
+            nrPojazduSettings = nrPojazduUstawienia.getText().toString();
+        }
 
         aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

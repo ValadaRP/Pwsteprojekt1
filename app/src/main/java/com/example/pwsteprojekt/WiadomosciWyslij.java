@@ -28,7 +28,6 @@ public class WiadomosciWyslij extends AppCompatActivity {
     private TextView nadawcaTV,odbiorcaTV,dataWyslaniaTV,tematTV,trescTV,textView52;
     private Button wyslijButton;
     private EditText editTextTresc;
-    WiadomosciMain wiadomosciMain = new WiadomosciMain();
 
 
 

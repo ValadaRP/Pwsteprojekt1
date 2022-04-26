@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Dokumenty3 extends AppCompatActivity {
@@ -30,6 +31,16 @@ public class Dokumenty3 extends AppCompatActivity {
 
         nrNaczepyEditText = findViewById(R.id.nrNaczepyEditText);
         dalejButton2 = findViewById(R.id.dalejButton2);
+
+        Intent intent = getIntent();
+        Bundle b = intent.getExtras();
+
+        if(b!=null){
+            String zdaj = (String) b.get("typ");
+            nrNaczepyEditText.setText(zdaj);
+        }else{
+            nrNaczepyEditText.setText("Nie ma zadnych extra");
+        }
 
 
         dalejButton2.setOnClickListener(new View.OnClickListener() {
