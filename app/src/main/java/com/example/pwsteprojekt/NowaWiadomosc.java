@@ -77,20 +77,19 @@ public class NowaWiadomosc extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... voids) {
             try {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection connection = DriverManager.getConnection("jdbc:mysql://mysql.mikr.us/db_j206","j206","0EF8_edee39");
-                Statement statement = connection.createStatement();
-                ResultSet resultSet = statement.executeQuery("INSERT INTO `wiadomosc` (`nadawca`, `odbiorca`, `data`, `temat`, `tresc`) VALUES ("+nadawca+","+odbiorca+","+data+","+temat+","+tresc);
+                    Class.forName("com.mysql.jdbc.Driver");
+                    Connection connection = DriverManager.getConnection("jdbc:mysql://mysql.mikr.us/db_j206","j206","0EF8_edee39");
+                    Statement statement = connection.createStatement();
+                    ResultSet resultSet = statement.executeQuery("INSERT INTO `wiadomosc` (`nadawca`,`odbiorca`,`data`,`temat`,`tresc`) VALUES ("+nadawca+","+odbiorca+","+data+","+temat+","+tresc);
 
-                resultSet.moveToInsertRow();
-                        resultSet.updateString("nadawca",nadawca);
-                        resultSet.updateString("odbiorca",odbiorca);
-                        resultSet.updateString("data",data);
-                        resultSet.updateString("temat",temat);
-                        resultSet.updateString("tresc",tresc);
-                resultSet.insertRow();
-
-
+                    resultSet.moveToInsertRow();
+                    resultSet.updateString(2,nadawca);
+                    resultSet.updateString(3,odbiorca);
+                    resultSet.updateString(4,data);
+                    resultSet.updateString(5,temat);
+                    resultSet.updateString(6,tresc);
+                    resultSet.insertRow();
+//                resultSet.moveToCurrentRow();
             }catch (Exception e){
                e.printStackTrace();
             }
@@ -98,7 +97,7 @@ public class NowaWiadomosc extends AppCompatActivity {
         }
         protected void onPostExecute(Void unused) {
 
-            Toast.makeText(NowaWiadomosc.this, "Jest okej", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(NowaWiadomosc.this, "Jest okej", Toast.LENGTH_SHORT).show();
             super.onPostExecute(unused);
         }
     }
