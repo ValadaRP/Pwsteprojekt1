@@ -80,16 +80,24 @@ public class NowaWiadomosc extends AppCompatActivity {
                     Class.forName("com.mysql.jdbc.Driver");
                     Connection connection = DriverManager.getConnection("jdbc:mysql://mysql.mikr.us/db_j206","j206","0EF8_edee39");
                     Statement statement = connection.createStatement();
-                    ResultSet resultSet = statement.executeQuery("INSERT INTO wiadomosc (nadawca,odbiorca,data,temat,tresc) VALUES ('"+nadawca+"','"+odbiorca+"','"+data+"','"+temat+"','"+tresc+"')");
+                    String query = "INSERT INTO wiadomosc (nadawca,odbiorca,data,temat,tresc) VALUES ('"+nadawca+"','"+odbiorca+"','"+data+"','"+temat+"','"+tresc+"'";
+                    //ResultSet resultSet = statement.executeQuery("INSERT INTO wiadomosc (nadawca,odbiorca,data,temat,tresc) VALUES ('"+nadawca+"','"+odbiorca+"','"+data+"','"+temat+"','"+tresc+"')");
+                    //ResultSet resultSet = statement.executeQuery("SELECT nadawca,odbiorca,data,temat,tresc FROM DEPARTMENT");
+                    statement.executeUpdate(query);
 
-                    resultSet.moveToInsertRow();
-                    resultSet.updateString("nadawca",nadawca);
-                    resultSet.updateString("odbiorca",odbiorca);
-                    resultSet.updateString("data",data);
-                    resultSet.updateString("temat",temat);
-                    resultSet.updateString("tresc",tresc);
-                    resultSet.insertRow();
-                    resultSet.moveToCurrentRow();
+                    //resultSet.moveToInsertRow();
+//                    //resultSet.updateString("nadawca",nadawca);
+//                    resultSet.updateString(2,nadawca);
+//                    //resultSet.updateString("odbiorca",odbiorca);
+//                    resultSet.updateString(3,odbiorca);
+//                    //resultSet.updateString("data",data);
+//                    resultSet.updateString(4,data);
+//                    //resultSet.updateString("temat",temat);
+//                    resultSet.updateString(5,temat);
+//                    //resultSet.updateString("tresc",tresc);
+//                    resultSet.updateString(6,tresc);
+//                    resultSet.insertRow();
+//                    resultSet.moveToCurrentRow();
 
             }catch (Exception e){
                e.printStackTrace();
