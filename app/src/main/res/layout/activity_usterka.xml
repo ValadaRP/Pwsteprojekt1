@@ -22,8 +22,8 @@
 
     <EditText
         android:id="@+id/editTextMultiLine"
-        android:layout_width="360dp"
-        android:layout_height="433dp"
+        android:layout_width="362dp"
+        android:layout_height="238dp"
         android:ems="10"
         android:gravity="start|top"
         android:hint="@string/text_usterka"
@@ -49,5 +49,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.91" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="329dp"
+        android:layout_height="254dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMultiLine"
+        app:layout_constraintVertical_bias="0.139"
+        tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

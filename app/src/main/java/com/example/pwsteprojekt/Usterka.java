@@ -16,10 +16,15 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
+
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -28,13 +33,9 @@ import java.util.Date;
 public class Usterka extends AppCompatActivity {
     private Button zrob_zdjecie,wyslij_usterka;
     private EditText editTextMultiLine;
-    public String imagePath;
-    public Bitmap yourSelectedImage;
-    public File imageFile;
-
-    static final int REQUEST_IMAGE_CAPTURE = 1;
-
-
+    private ImageView imageView;
+    private Bitmap imageBitmap;
+    public String encodeImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,49 +45,57 @@ public class Usterka extends AppCompatActivity {
         zrob_zdjecie = findViewById(R.id.zrob_zdjecie);
         editTextMultiLine = findViewById(R.id.editTextMultiLine);
         wyslij_usterka = findViewById(R.id.wyslij_usterka);
+        imageView = findViewById(R.id.imageView);
 
         zrob_zdjecie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                try {
-                    startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-                } catch (ActivityNotFoundException e) {
-                    // display error state to the user
-                }
+                dispatchTakePictureIntent();
             }
+
         });
         wyslij_usterka.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent galleryIntent = new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(galleryIntent,3);
+
+
 
             }
         });
+
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            imageBitmap = (Bitmap) extras.get("data");
+            imageView.setImageBitmap(imageBitmap);
+            imageStore(imageBitmap);
+        }
     }
 
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if (resultCode == RESULT_OK && data != null){
-//            Uri selectedImage = data.getData();
-//            imagePath = getPath(selectedImage);
-//            imageFile = new File(imagePath);
-//        }
-//    }
+    private void imageStore(Bitmap bitmap){
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG,100,stream);
 
-//    public String getPath(Uri uri) {
-//        String[] projection = { MediaStore.Images.Media.DATA };
-//        Cursor cursor = getContentResolver().query(uri, projection, null, null, null);
-//        int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-//        cursor.moveToFirst();
-//        int columnIndex = cursor.getColumnIndex(projection[0]);
-//        String filePath = cursor.getString(columnIndex);
-//        cursor.close();
-//        yourSelectedImage = BitmapFactory.decodeFile(filePath);
-//        return cursor.getString(column_index);
-//    }
+        byte [] imagebyte = stream.toByteArray();
+
+        encodeImage = android.util.Base64.encodeToString(imagebyte, Base64.DEFAULT);
+    }
+    static final int REQUEST_IMAGE_CAPTURE = 1;
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        try {
+            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+        } catch (ActivityNotFoundException e) {
+            // display error state to the user
+        }
+    }
+
+
+
+
 
     public EditText getEditTextMultiLine() {
         return editTextMultiLine;
