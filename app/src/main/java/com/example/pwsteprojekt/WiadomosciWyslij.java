@@ -122,13 +122,13 @@ public class WiadomosciWyslij extends AppCompatActivity {
         }
         @Override
         protected void onPostExecute(Void unused) {
-//            nadawcaTV.setText("Nadawca: "+nadawca);
+           //nadawcaTV.setText("Nadawca: "+nadawca);
             nadawcaTV.setText(nadawca);
            // odbiorcaTV.setText("Odbiorca: "+odbiorca);
             odbiorcaTV.setText(odbiorca);
-            //dataWyslaniaTV.setText("Data: " + date);
+           // dataWyslaniaTV.setText("Data: " + date);
             dataWyslaniaTV.setText(String.valueOf(date));
-           // tematTV.setText("Temat: " + temat);
+            //tematTV.setText("Temat: " + temat);
             tematTV.setText(temat);
             trescTV.setText(tresc);
             super.onPostExecute(unused);
@@ -140,9 +140,7 @@ public class WiadomosciWyslij extends AppCompatActivity {
             String nadawca = nadawcaTV.getText().toString();
             String odbiorca = odbiorcaTV.getText().toString();
             String date = dataWyslaniaTV.getText().toString();
-            //LocalDate localDate = LocalDate.now();
             String temat = tematTV.getText().toString();
-            //String tresc = trescTV.getText().toString();
             String odpowiedz = editTextTresc.getText().toString();
 
             @Override
@@ -154,8 +152,8 @@ public class WiadomosciWyslij extends AppCompatActivity {
                     Class.forName("com.mysql.jdbc.Driver");
                     Connection connection = DriverManager.getConnection("jdbc:mysql://mysql.mikr.us/db_j206","j206","0EF8_edee39");
                     Statement statement = connection.createStatement();
-                    ResultSet resultSet = statement.executeQuery("UPDATE `wiadomosc` SET `id`="+bundle.get("idwiadomosc")+",`nadawca`="+nadawca+",`odbiorca`="+odbiorca+",`data`="+date+",`temat`="+temat+",`tresc`="+odpowiedz);
-                        resultSet.updateRow();
+                    String query = "INSERT INTO wiadomosc (nadawca,odbiorca,data,temat,tresc) VALUES ('"+nadawca+"','"+odbiorca+"','"+date+"','"+temat+"','"+odpowiedz+"')";
+                    statement.execute(query);
                 }catch (Exception e){
                   e.toString();
                 }
