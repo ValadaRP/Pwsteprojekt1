@@ -36,8 +36,8 @@ public class Dokumenty3 extends AppCompatActivity {
         Bundle b = intent.getExtras();
 
         if(b!=null){
-            String zdaj = (String) b.get("typ");
-            nrNaczepyEditText.setText(zdaj);
+            String typ = (String) b.get("typ");
+            nrNaczepyEditText.setText(typ);
         }else{
             nrNaczepyEditText.setText("Nie ma zadnych extra");
         }

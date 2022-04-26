@@ -122,10 +122,14 @@ public class WiadomosciWyslij extends AppCompatActivity {
         }
         @Override
         protected void onPostExecute(Void unused) {
-            nadawcaTV.setText("Nadawca: "+nadawca);
-            odbiorcaTV.setText("Odbiorca: " + odbiorca);
-            dataWyslaniaTV.setText("Data: " + date);
-            tematTV.setText("Temat: " + temat);
+//            nadawcaTV.setText("Nadawca: "+nadawca);
+            nadawcaTV.setText(nadawca);
+           // odbiorcaTV.setText("Odbiorca: "+odbiorca);
+            odbiorcaTV.setText(odbiorca);
+            //dataWyslaniaTV.setText("Data: " + date);
+            dataWyslaniaTV.setText(String.valueOf(date));
+           // tematTV.setText("Temat: " + temat);
+            tematTV.setText(temat);
             trescTV.setText(tresc);
             super.onPostExecute(unused);
         }
@@ -145,12 +149,12 @@ public class WiadomosciWyslij extends AppCompatActivity {
             protected Void doInBackground(Void... voids) {
                 Intent intent = getIntent();
                 Bundle bundle = intent.getExtras();
-                int id = bundle.getInt("id");
+                bundle.get("idwiadomosc");
                 try {
                     Class.forName("com.mysql.jdbc.Driver");
                     Connection connection = DriverManager.getConnection("jdbc:mysql://mysql.mikr.us/db_j206","j206","0EF8_edee39");
                     Statement statement = connection.createStatement();
-                    ResultSet resultSet = statement.executeQuery("UPDATE `wiadomosc` SET `id`="+id+",`nadawca`="+nadawca+",`odbiorca`="+odbiorca+",`data`="+date+",`temat`="+temat+",`tresc`="+odpowiedz+"WHERE id=1");
+                    ResultSet resultSet = statement.executeQuery("UPDATE `wiadomosc` SET `id`="+bundle.get("idwiadomosc")+",`nadawca`="+nadawca+",`odbiorca`="+odbiorca+",`data`="+date+",`temat`="+temat+",`tresc`="+odpowiedz);
                         resultSet.updateRow();
                 }catch (Exception e){
                   e.toString();

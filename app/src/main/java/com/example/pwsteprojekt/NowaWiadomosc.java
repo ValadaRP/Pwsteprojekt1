@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.sql.Connection;
@@ -18,16 +19,25 @@ import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.Calendar;
+import java.util.Locale;
 
 public class NowaWiadomosc extends AppCompatActivity {
 
     //NowaWiadomosc nowaWiadomosc = new NowaWiadomosc();
     private Button wyslijWiad;
-    private EditText nadawcaNowa,odbiorcaNowa,dataNowa,tematNowa,trescNowa;
+    private EditText nadawcaNowa,odbiorcaNowa,tematNowa,trescNowa;
+    private TextView dataNowa;
     int id;
 
-//)
+    Calendar calendar;
+    SimpleDateFormat simpleDateFormat;
+    public String Date;
+
+    //)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +49,12 @@ public class NowaWiadomosc extends AppCompatActivity {
         dataNowa = findViewById(R.id.dataNowa);
         tematNowa = findViewById(R.id.tematNowa);
         trescNowa = findViewById(R.id.trescNowa);
+
+        calendar = Calendar.getInstance();
+        simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date = simpleDateFormat.format(calendar.getTime());
+        dataNowa.setText(Date);
+
 
         wyslijWiad.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
@@ -56,7 +72,6 @@ public class NowaWiadomosc extends AppCompatActivity {
         String nadawca = nadawcaNowa.getText().toString();
         String odbiorca = odbiorcaNowa.getText().toString();
         String data = dataNowa.getText().toString();
-        //Date data1 = Date.valueOf(String.valueOf(LocalDateTime.now()));
         String temat = tematNowa.getText().toString();
         String tresc = trescNowa.getText().toString();
         @Override
@@ -65,17 +80,16 @@ public class NowaWiadomosc extends AppCompatActivity {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection connection = DriverManager.getConnection("jdbc:mysql://mysql.mikr.us/db_j206","j206","0EF8_edee39");
                 Statement statement = connection.createStatement();
-                ResultSet resultSet = statement.executeQuery("INSERT INTO `wiadomosc`(`id`, `nadawca`, `odbiorca`, `data`, `temat`, `tresc`) VALUES ("+id+","+nadawca+","+odbiorca+","+data+","+temat+","+tresc+"");
-                resultSet.last();
-                id = resultSet.getInt("id")+1;
+                ResultSet resultSet = statement.executeQuery("INSERT INTO `wiadomosc` (`nadawca`, `odbiorca`, `data`, `temat`, `tresc`) VALUES ("+nadawca+","+odbiorca+","+data+","+temat+","+tresc);
+
                 resultSet.moveToInsertRow();
-                    resultSet.updateInt("id",id);
-                    resultSet.updateString("nadawca",nadawca);
-                    resultSet.updateString("odbiorca",odbiorca);
-                    resultSet.updateString("data",data);
-                    resultSet.updateString("temat",temat);
-                    resultSet.updateString("tresc",tresc);
-                    resultSet.insertRow();
+                        resultSet.updateString("nadawca",nadawca);
+                        resultSet.updateString("odbiorca",odbiorca);
+                        resultSet.updateString("data",data);
+                        resultSet.updateString("temat",temat);
+                        resultSet.updateString("tresc",tresc);
+                resultSet.insertRow();
+
 
             }catch (Exception e){
                e.printStackTrace();
