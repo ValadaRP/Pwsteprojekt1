@@ -3,6 +3,7 @@ package com.example.pwsteprojekt;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,6 +12,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -20,6 +25,8 @@ public class WiadomosciWyslane extends AppCompatActivity {
     private ArrayAdapter<String> adapter;
     private ArrayList<String> wiadomosciWyslane;
     private TextView infoW;
+    int id;
+    public String [] a;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +36,7 @@ public class WiadomosciWyslane extends AppCompatActivity {
         infoW = findViewById(R.id.infoW);
         //String[] wiadomosci = {};
         wiadomosciWyslane = new ArrayList<String>();
-        Collections.addAll(wiadomosciWyslane,new String[]{"Android","IPhone","JEDZIE POCIAG Z DALEKA NA NIKOGO NIE CZEKA","WindowsMobile","Blackberry","WebOS","Ubuntu","Windows7","Max OS X"});
+        Collections.addAll(wiadomosciWyslane,new String[]{"ID: 1","ID: 2","ID: 3","ID: 4","ID: 5","ID: 6","ID: 7"});
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,wiadomosciWyslane);
         list.setAdapter(adapter);
         list.setOnItemClickListener(this::onItemClick);
@@ -44,17 +51,40 @@ public class WiadomosciWyslane extends AppCompatActivity {
             }
         });
 
+
     }
     public void onItemClick(AdapterView<?> parent, View view, int position, long id){
         String wiadomosc = list.getItemAtPosition(position).toString();
-        String idwiad = String.valueOf(id);
+        int idwiad = Integer.parseInt(String.valueOf(id));
         Intent intent = new Intent(WiadomosciWyslane.this,WiadomosciWyslij.class);
         intent.putExtra("wiadomosc", wiadomosc);
-        intent.putExtra("idwiadomosc",idwiad);
+        intent.putExtra("idwiadomosc",idwiad+1);
         startActivity(intent);
     }
 
     public ListView getList() {
         return list;
+    }
+    class TaskId extends AsyncTask<Void,Void,Void> {
+        @Override
+        protected Void doInBackground(Void... voids) {
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection connection = DriverManager.getConnection("jdbc:mysql://mysql.mikr.us/db_j206","j206","0EF8_edee39");
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery("Select id from wiadomosc");
+                while (resultSet.next()){
+                    id+=resultSet.getInt(1);
+                }
+            }catch (Exception e){
+                e.toString();
+            }
+            return null;
+        }
+        @Override
+        protected void onPostExecute(Void unused) {
+            a = new String[id];
+            super.onPostExecute(unused);
+        }
     }
 }

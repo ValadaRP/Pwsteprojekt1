@@ -62,4 +62,9 @@
     <string name="trybJasny">Tryb jasny</string>
     <string name="nrPojazdu">Nr Pojazdu</string>
     <string name="nowaWiadomosc">Utworz nową wiadomość</string>
+    <string name="trescWiad">Treść: </string>
+    <string name="tematWiad">Temat: </string>
+    <string name="dataWiadomosci">Data wysłania: </string>
+    <string name="odbiorcaWiad">Odbiorca: </string>
+    <string name="nadawcaWiad">Nadawca: </string>
 </resources>

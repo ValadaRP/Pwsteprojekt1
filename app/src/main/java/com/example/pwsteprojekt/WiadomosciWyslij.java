@@ -122,13 +122,9 @@ public class WiadomosciWyslij extends AppCompatActivity {
         }
         @Override
         protected void onPostExecute(Void unused) {
-           //nadawcaTV.setText("Nadawca: "+nadawca);
             nadawcaTV.setText(nadawca);
-           // odbiorcaTV.setText("Odbiorca: "+odbiorca);
             odbiorcaTV.setText(odbiorca);
-           // dataWyslaniaTV.setText("Data: " + date);
             dataWyslaniaTV.setText(String.valueOf(date));
-            //tematTV.setText("Temat: " + temat);
             tematTV.setText(temat);
             trescTV.setText(tresc);
             super.onPostExecute(unused);
